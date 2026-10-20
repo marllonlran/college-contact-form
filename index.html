@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fale Conosco — Faculdade Horizonte</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+
+<body>
+  <main class="page">
+    <h1><mark>Formulário da Faculdade Horizonte</mark></h1>
+
+    <!-- Ao enviar, o js/script.js leva para obrigado.html -->
+    <form class="card" id="contact-form" action="obrigado.html" method="post">
+      <fieldset>
+        <legend>Sobre você</legend>
+
+        <div class="row">
+          <div class="field">
+            <label for="first-name">Nome</label>
+            <input type="text" id="first-name" name="first_name" autocomplete="given-name" required>
+          </div>
+          <div class="field">
+            <label for="last-name">Sobrenome</label>
+            <input type="text" id="last-name" name="last_name" autocomplete="family-name" required>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" autocomplete="email" placeholder="voce@exemplo.com" required>
+            <small class="error">Digite um e-mail válido.</small>
+          </div>
+          <div class="field">
+            <label for="phone">Telefone <span class="optional">(opcional)</span></label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="(00) 00000-0000">
+          </div>
+        </div>
+
+        <div class="field">
+          <span class="label">Eu sou…</span>
+          <div class="chips" role="radiogroup" aria-label="Eu sou">
+            <label class="chip">
+              <input type="radio" name="role" value="futuro-aluno" required checked>
+              <span>Futuro aluno</span>
+            </label>
+            <label class="chip">
+              <input type="radio" name="role" value="aluno">
+              <span>Aluno atual</span>
+            </label>
+            <label class="chip">
+              <input type="radio" name="role" value="responsavel">
+              <span>Pai / responsável</span>
+            </label>
+            <label class="chip">
+              <input type="radio" name="role" value="ex-aluno">
+              <span>Ex-aluno</span>
+            </label>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Sua mensagem</legend>
+
+        <div class="field">
+          <label for="department">Setor</label>
+          <select id="department" name="department" required>
+            <option value="" disabled selected>Escolha um setor</option>
+            <option value="vestibular">Vestibular e matrículas</option>
+            <option value="financeiro">Financeiro e bolsas (ProUni, FIES)</option>
+            <option value="secretaria">Secretaria acadêmica</option>
+            <option value="estagios">Estágios e carreira</option>
+            <option value="ti">Suporte de TI</option>
+            <option value="outro">Outro assunto</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="subject">Assunto</label>
+          <input type="text" id="subject" name="subject" maxlength="100" required>
+        </div>
+
+        <div class="field">
+          <label for="message">Mensagem</label>
+          <textarea id="message" name="message" rows="5" minlength="20" maxlength="1000"
+            placeholder="Conte como podemos ajudar…" required></textarea>
+          <small class="error">Escreva pelo menos 20 caracteres.</small>
+          <small class="counter" id="counter" aria-live="polite">0 / 1000</small>
+        </div>
+      </fieldset>
+
+      <label class="consent">
+        <input type="checkbox" name="consent" required>
+        <span>Autorizo a Faculdade Horizonte a entrar em contato comigo sobre esta solicitação.</span>
+      </label>
+
+      <button type="submit">Enviar mensagem</button>
+    </form>
+  </main>
+</body>
+
+</html>
