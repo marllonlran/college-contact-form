@@ -1,87 +1,87 @@
-# Fale Conosco — Faculdade Horizonte
+# Contact Us — Horizonte College
 
-Página de contato de uma faculdade fictícia, feita com **HTML, CSS e JavaScript puros** (sem frameworks). Foi uma atividade de front-end que usei para praticar estrutura semântica, estilização responsiva e interatividade básica.
+A contact page for a fictional college, built with **plain HTML, CSS, and JavaScript** (no frameworks). It began as a front-end assignment that I used to practice semantic structure, responsive styling, and basic interactivity.
 
-🔗 **Ver online:** https://marllonlran.github.io/fale-conosco-faculdade/
+🔗 **Live demo:** https://marllonlran.github.io/fale-conosco-faculdade/
 
-## Funcionalidades
+## Features
 
-- Formulário dividido em duas seções: **Sobre você** e **Sua mensagem**
-- Validação nativa do navegador (campos obrigatórios, e-mail, mínimo de caracteres)
-- Mensagens de erro que só aparecem depois que o usuário mexe no campo
-- Seleção de perfil em formato de "chips" (Futuro aluno, Aluno atual, etc.)
-- Contador de caracteres da mensagem em tempo real
-- Máscara automática de telefone: `(00) 00000-0000`
-- Página de obrigado que mostra o nome de quem enviou
-- Layout responsivo (funciona no celular)
+- Form split into two sections: **About you** and **Your message**
+- Native browser validation (required fields, email format, minimum length)
+- Error messages that appear only after the user interacts with a field
+- Role selection displayed as "chips" (Prospective student, Current student, etc.)
+- Real-time character counter for the message
+- Automatic phone number mask: `(00) 00000-0000`
+- Thank-you page that greets the sender by name
+- Responsive layout (works on mobile)
 
-## Tecnologias
+## Technologies
 
-| Tecnologia | Uso |
+| Technology | Purpose |
 | --- | --- |
-| HTML5 | Estrutura semântica e validação de formulário |
-| CSS3 | Variáveis, Grid, Flexbox, media queries e pseudo-classes |
-| JavaScript | Eventos, manipulação do DOM e `sessionStorage` |
-| Google Fonts | Fontes Fraunces (títulos) e Inter (texto) |
+| HTML5 | Semantic structure and form validation |
+| CSS3 | Custom properties, Grid, Flexbox, media queries, and pseudo-classes |
+| JavaScript | Events, DOM manipulation, and `sessionStorage` |
+| Google Fonts | Fraunces (headings) and Inter (body text) |
 
-## Estrutura do projeto
+## Project structure
 
 ```
 .
-├── index.html       # Página do formulário
-├── obrigado.html    # Página exibida depois do envio
+├── index.html       # Form page
+├── thank-you.html   # Page shown after submission
 ├── css/
-│   └── style.css    # Todos os estilos
+│   └── style.css    # All styles
 └── js/
-    └── script.js    # Contador, máscara de telefone e envio
+    └── script.js    # Counter, phone mask, and submission
 ```
 
-## Como rodar
+## Getting started
 
-Não precisa instalar nada:
+No installation required:
 
-1. Baixe ou clone o repositório
+1. Download or clone the repository
    ```bash
    git clone https://github.com/marllonlran/fale-conosco-faculdade.git
    ```
-2. Abra o arquivo `index.html` no navegador
+2. Open `index.html` in your browser
 
-> Dica: no VS Code, a extensão **Live Server** atualiza a página sozinha a cada alteração.
+> Tip: in VS Code, the **Live Server** extension automatically reloads the page on every change.
 
-## Minha evolução
+## What I learned
 
 ### HTML
 
-- Comecei estruturando o formulário com tags **semânticas**: `<main>`, `<form>`, `<fieldset>` e `<legend>` para agrupar os campos.
-- Aprendi a ligar cada `<label>` ao seu campo com `for` e `id`, o que melhora a acessibilidade e deixa clicar no texto para focar o campo.
-- Usei os tipos certos de input (`email`, `tel`, `radio`, `checkbox`) e atributos como `required`, `minlength`, `maxlength` e `autocomplete` para o próprio navegador validar e ajudar o usuário.
-- Entendi a diferença entre usar `<br>` para criar espaço e deixar o espaçamento por conta do CSS.
+- I started by structuring the form with **semantic** tags: `<main>`, `<form>`, `<fieldset>`, and `<legend>` to group related fields.
+- I learned to associate each `<label>` with its field using `for` and `id`, which improves accessibility and lets users click the label text to focus the field.
+- I used the appropriate input types (`email`, `tel`, `radio`, `checkbox`) and attributes such as `required`, `minlength`, `maxlength`, and `autocomplete` so the browser itself can validate input and assist the user.
+- I understood the difference between using `<br>` to create spacing and leaving spacing to CSS.
 
 ### CSS
 
-- Organizei as cores e medidas em **variáveis** (`:root`), assim posso mudar o tema trocando poucos valores.
-- Usei **Grid** para colocar campos lado a lado e **Flexbox** para alinhar labels, chips e o checkbox.
-- Fiz o layout **responsivo** com `@media`: no celular, os campos ficam em uma coluna só e o botão ocupa a largura toda.
-- Estilizei estados de interação: `:hover`, `:focus-visible`, `:checked` e `:user-invalid`.
-- Transformei os radios em "chips" escondendo o input e estilizando o `<span>` ao lado com o seletor `+`.
-- **Um erro que me ensinou muito:** esqueci um `;` e um `}` em uma regra, e todo o CSS abaixo dela parou de funcionar. Aprendi a conferir se as chaves estão fechadas e a prestar atenção nos avisos do editor.
+- I organized colors and sizes into **custom properties** (`:root`), so the theme can be changed by updating just a few values.
+- I used **Grid** to place fields side by side and **Flexbox** to align labels, chips, and the checkbox.
+- I made the layout **responsive** with `@media`: on mobile, fields stack into a single column and the button spans the full width.
+- I styled interaction states: `:hover`, `:focus-visible`, `:checked`, and `:user-invalid`.
+- I turned the radio buttons into "chips" by visually hiding the input and styling the adjacent `<span>` with the `+` selector.
+- **A mistake that taught me a lot:** I forgot a `;` and a `}` in one rule, and all the CSS below it stopped working. I learned to check that braces are properly closed and to pay attention to editor warnings.
 
 ### JavaScript
 
-- Selecionei elementos com `getElementById` e reagi às ações do usuário com `addEventListener`.
-- Criei um **contador de caracteres** que atualiza no evento `input`.
-- Fiz uma **máscara de telefone** usando expressão regular (`/\D/g`) para manter só os números e depois formatar.
-- No envio, usei `event.preventDefault()`, guardei o nome no `sessionStorage` e redirecionei para a página de obrigado.
-- Usei `try/catch` para a página continuar funcionando mesmo se o navegador bloquear o armazenamento.
-- Aprendi a usar **um único arquivo JS para duas páginas**, verificando se cada elemento existe antes de usá-lo.
+- I selected elements with `getElementById` and responded to user actions with `addEventListener`.
+- I built a **character counter** that updates on the `input` event.
+- I created a **phone mask** using a regular expression (`/\D/g`) to keep only digits before formatting them.
+- On submission, I used `event.preventDefault()`, stored the name in `sessionStorage`, and redirected to the thank-you page.
+- I used `try/catch` so the page keeps working even if the browser blocks storage.
+- I learned to use **a single JS file for two pages** by checking whether each element exists before using it.
 
-## Próximos passos
+## Next steps
 
-- [ ] Enviar os dados de verdade para um back-end ou serviço de formulário (ex.: Formspree)
-- [ ] Adicionar modo escuro com `prefers-color-scheme`
-- [ ] Ligar as mensagens de erro aos campos com `aria-describedby`
-- [ ] Trocar o agrupamento dos chips por um `<fieldset>` próprio
+- [ ] Actually send the data to a back end or form service (e.g., Formspree)
+- [ ] Add dark mode with `prefers-color-scheme`
+- [ ] Link error messages to their fields with `aria-describedby`
+- [ ] Move the chip group into its own `<fieldset>`
 
-## Autor
+## Author
 
-Feito por **Marllon Lorran** — [GitHub](https://github.com/marllonlran)
+Built by **Marllon Lorran** — [GitHub](https://github.com/marllonlran)

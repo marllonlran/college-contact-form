@@ -1,4 +1,4 @@
-// Página do formulário (index.html)
+// Form page (index.html)
 const form = document.getElementById("contact-form");
 
 if (form) {
@@ -6,7 +6,7 @@ if (form) {
     const counter = document.getElementById("counter");
     const phone = document.getElementById("phone");
 
-    // Contador de caracteres da mensagem
+    // Message character counter
     function updateCounter() {
         counter.textContent = `${message.value.length} / ${message.maxLength}`;
     }
@@ -14,7 +14,7 @@ if (form) {
     message.addEventListener("input", updateCounter);
     updateCounter();
 
-    // Máscara de telefone: (00) 00000-0000
+    // Phone mask (Brazilian format): (00) 00000-0000
     phone.addEventListener("input", () => {
         const digits = phone.value.replace(/\D/g, "").slice(0, 11);
 
@@ -29,24 +29,24 @@ if (form) {
         }
     });
 
-    // O navegador só dispara o "submit" se todos os campos forem válidos
+    // The browser only fires "submit" when every field is valid
     form.addEventListener("submit", (event) => {
         event.preventDefault();
 
         const firstName = form.elements.first_name.value.trim();
 
-        // Guarda o nome para mostrar na página de obrigado
+        // Store the name to display on the thank-you page
         try {
             sessionStorage.setItem("contact-name", firstName);
         } catch (error) {
-            // Se o navegador bloquear o armazenamento, a página de obrigado usa um texto padrão
+            // If the browser blocks storage, the thank-you page falls back to the default text
         }
 
-        window.location.href = "obrigado.html";
+        window.location.href = "thank-you.html";
     });
 }
 
-// Página de obrigado (obrigado.html)
+// Thank-you page (thank-you.html)
 const successName = document.getElementById("success-name");
 
 if (successName) {
@@ -56,7 +56,7 @@ if (successName) {
         name = sessionStorage.getItem("contact-name") || "";
         sessionStorage.removeItem("contact-name");
     } catch (error) {
-        // Sem armazenamento disponível: mantém o texto padrão
+        // No storage available: keep the default text
     }
 
     if (name) {
