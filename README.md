@@ -8,19 +8,22 @@ A contact page for a fictional college, built with **plain HTML, CSS, and JavaSc
 
 - Form split into two sections: **About you** and **Your message**
 - Native browser validation (required fields, email format, minimum length)
-- Error messages that appear only after the user interacts with a field
+- Error messages that appear only after the user interacts with a field, linked to their inputs with `aria-describedby` for screen readers
 - Role selection displayed as "chips" (Prospective student, Current student, etc.)
 - Real-time character counter for the message
 - Automatic phone number mask: `(00) 00000-0000`
+- Submit button switches to a "Sending…" state to prevent double submissions
 - Thank-you page that greets the sender by name
 - Responsive layout (works on mobile)
+- Automatic dark mode that follows the system theme
+- Respects the "reduce motion" accessibility setting
 
 ## Technologies
 
 | Technology | Purpose |
 | --- | --- |
 | HTML5 | Semantic structure and form validation |
-| CSS3 | Custom properties, Grid, Flexbox, media queries, and pseudo-classes |
+| CSS3 | Custom properties, Grid, Flexbox, `clamp()`, media queries, and pseudo-classes |
 | JavaScript | Events, DOM manipulation, and `sessionStorage` |
 | Google Fonts | Fraunces (headings) and Inter (body text) |
 
@@ -54,12 +57,16 @@ No installation required:
 
 - I started by structuring the form with **semantic** tags: `<main>`, `<form>`, `<fieldset>`, and `<legend>` to group related fields.
 - I learned to associate each `<label>` with its field using `for` and `id`, which improves accessibility and lets users click the label text to focus the field.
+- I grouped the role chips in their own `<fieldset>` with a `<legend>`, the native way to label a group of radio buttons.
+- I linked each error message to its field with `aria-describedby`, so screen readers announce it.
 - I used the appropriate input types (`email`, `tel`, `radio`, `checkbox`) and attributes such as `required`, `minlength`, `maxlength`, and `autocomplete` so the browser itself can validate input and assist the user.
 - I understood the difference between using `<br>` to create spacing and leaving spacing to CSS.
 
 ### CSS
 
 - I organized colors and sizes into **custom properties** (`:root`), so the theme can be changed by updating just a few values.
+- I added **dark mode** with `prefers-color-scheme` by redefining only those custom properties, and turned off transitions with `prefers-reduced-motion`.
+- I used `:is()` to share one rule across several selectors and `clamp()` for a heading that scales with the screen.
 - I used **Grid** to place fields side by side and **Flexbox** to align labels, chips, and the checkbox.
 - I made the layout **responsive** with `@media`: on mobile, fields stack into a single column and the button spans the full width.
 - I styled interaction states: `:hover`, `:focus-visible`, `:checked`, and `:user-invalid`.
@@ -68,19 +75,21 @@ No installation required:
 
 ### JavaScript
 
-- I selected elements with `getElementById` and responded to user actions with `addEventListener`.
+- I split the script into small, named functions (`formatPhone`, `saveName`, `takeName`, `setupContactForm`, `setupThankYouPage`) so each part has a single job.
+- I selected elements with `getElementById` and `form.elements`, and responded to user actions with `addEventListener`.
 - I built a **character counter** that updates on the `input` event.
 - I created a **phone mask** using a regular expression (`/\D/g`) to keep only digits before formatting them.
-- On submission, I used `event.preventDefault()`, stored the name in `sessionStorage`, and redirected to the thank-you page.
+- On submission, I used `event.preventDefault()`, disabled the button, stored the name in `sessionStorage`, and redirected to the form's `action` page.
 - I used `try/catch` so the page keeps working even if the browser blocks storage.
 - I learned to use **a single JS file for two pages** by checking whether each element exists before using it.
 
 ## Next steps
 
 - [ ] Actually send the data to a back end or form service (e.g., Formspree)
-- [ ] Add dark mode with `prefers-color-scheme`
-- [ ] Link error messages to their fields with `aria-describedby`
-- [ ] Move the chip group into its own `<fieldset>`
+- [x] Add dark mode with `prefers-color-scheme`
+- [x] Link error messages to their fields with `aria-describedby`
+- [x] Move the chip group into its own `<fieldset>`
+- [ ] Add a manual light/dark theme toggle
 
 ## Author
 
