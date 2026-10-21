@@ -54,7 +54,7 @@ legend {
     box-shadow: 0 1px 3px rgb(0 0 0 / .06), 0 8px 24px rgb(0 0 0 / .06);
 }
 
-/* Seções do formulário */
+/* Form sections */
 fieldset {
     border: 0;
     padding: 0;
@@ -73,7 +73,7 @@ legend {
     gap: 16px;
 }
 
-/* Campos */
+/* Fields */
 .field {
     display: flex;
     flex-direction: column;
@@ -133,7 +133,7 @@ textarea:focus-visible {
     color: #9ca3af;
 }
 
-/* Mensagem de erro só aparece depois que o usuário mexe no campo */
+/* Error message only appears after the user interacts with the field */
 .error {
     display: none;
     color: var(--error);
@@ -151,7 +151,7 @@ textarea:user-invalid {
     border-color: var(--error);
 }
 
-/* Chips: esconde o radio e estiliza o texto */
+/* Chips: hide the radio input and style the label text */
 .chips {
     display: flex;
     flex-wrap: wrap;
@@ -194,7 +194,7 @@ textarea:user-invalid {
     outline-offset: 2px;
 }
 
-/* Consentimento */
+/* Consent */
 .consent {
     display: flex;
     gap: 10px;
@@ -211,7 +211,7 @@ textarea:user-invalid {
     accent-color: var(--accent);
 }
 
-/* Botões (.button é um link com cara de botão) */
+/* Buttons (.button is a link styled as a button) */
 button,
 .button {
     display: inline-block;
@@ -238,7 +238,7 @@ button:focus-visible,
     outline-offset: 2px;
 }
 
-/* Tela de sucesso */
+/* Success screen */
 .success {
     text-align: center;
 }
@@ -265,7 +265,7 @@ button:focus-visible,
     margin: 0 0 24px;
 }
 
-/* Celular */
+/* Mobile */
 @media (max-width: 560px) {
     .card {
         padding: 24px 20px;
