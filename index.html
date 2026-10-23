@@ -1,123 +1,123 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Get in touch with Horizonte College admissions, financial aid, registrar, careers, and IT support.">
+  <meta name="description" content="Entre em contato com a Faculdade Horizonte: admissões, financeiro, secretaria acadêmica, estágios e carreiras e suporte de TI.">
   <meta name="color-scheme" content="light dark">
-  <title>Contact Us — Horizonte College</title>
+  <title>Fale Conosco — Faculdade Horizonte</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500;600&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/estilo.css">
   <script src="js/script.js" defer></script>
 </head>
 
 <body>
-  <main class="page">
-    <header class="intro">
-      <p class="eyebrow">Horizonte College</p>
-      <h1>Contact us</h1>
-      <p>Have a question about admissions, tuition, or student life? Send us a message and the right department will reply within two business days.</p>
+  <main class="pagina">
+    <header class="introducao">
+      <p class="rotulo-topo">Faculdade Horizonte</p>
+      <h1>Fale conosco</h1>
+      <p>Tem alguma dúvida sobre admissões, mensalidades ou vida acadêmica? Envie uma mensagem e o setor responsável retornará em até dois dias úteis.</p>
     </header>
 
-    <form class="card" id="contact-form" action="thank-you.html" method="post">
+    <form class="cartao" id="formulario-contato" action="obrigado.html" method="post">
       <fieldset>
-        <legend>About you</legend>
+        <legend>Sobre você</legend>
 
-        <div class="row">
-          <div class="field">
-            <label for="first-name">First name</label>
-            <input type="text" id="first-name" name="first_name" autocomplete="given-name"
-              aria-describedby="first-name-error" required>
-            <small class="error" id="first-name-error">Please enter your first name.</small>
+        <div class="linha">
+          <div class="campo">
+            <label for="primeiro-nome">Nome</label>
+            <input type="text" id="primeiro-nome" name="primeiro_nome" autocomplete="given-name"
+              aria-describedby="primeiro-nome-erro" required>
+            <small class="erro" id="primeiro-nome-erro">Por favor, informe seu nome.</small>
           </div>
-          <div class="field">
-            <label for="last-name">Last name</label>
-            <input type="text" id="last-name" name="last_name" autocomplete="family-name"
-              aria-describedby="last-name-error" required>
-            <small class="error" id="last-name-error">Please enter your last name.</small>
+          <div class="campo">
+            <label for="sobrenome">Sobrenome</label>
+            <input type="text" id="sobrenome" name="sobrenome" autocomplete="family-name"
+              aria-describedby="sobrenome-erro" required>
+            <small class="erro" id="sobrenome-erro">Por favor, informe seu sobrenome.</small>
           </div>
         </div>
 
-        <div class="row">
-          <div class="field">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" autocomplete="email" placeholder="you@example.com"
-              aria-describedby="email-error" required>
-            <small class="error" id="email-error">Please enter a valid email address.</small>
+        <div class="linha">
+          <div class="campo">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" autocomplete="email" placeholder="voce@exemplo.com"
+              aria-describedby="email-erro" required>
+            <small class="erro" id="email-erro">Por favor, informe um endereço de e-mail válido.</small>
           </div>
-          <div class="field">
-            <label for="phone">Phone <span class="optional">(optional)</span></label>
-            <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="numeric"
+          <div class="campo">
+            <label for="telefone">Telefone <span class="opcional">(opcional)</span></label>
+            <input type="tel" id="telefone" name="telefone" autocomplete="tel" inputmode="numeric"
               placeholder="(00) 00000-0000">
           </div>
         </div>
 
-        <fieldset class="field">
-          <legend class="label">I am a…</legend>
-          <div class="chips">
-            <label class="chip">
-              <input type="radio" name="role" value="prospective-student" required checked>
-              <span>Prospective student</span>
+        <fieldset class="campo">
+          <legend class="rotulo">Eu sou…</legend>
+          <div class="opcoes">
+            <label class="opcao">
+              <input type="radio" name="perfil" value="futuro-aluno" required checked>
+              <span>Futuro aluno</span>
             </label>
-            <label class="chip">
-              <input type="radio" name="role" value="current-student">
-              <span>Current student</span>
+            <label class="opcao">
+              <input type="radio" name="perfil" value="aluno-atual">
+              <span>Aluno atual</span>
             </label>
-            <label class="chip">
-              <input type="radio" name="role" value="parent-guardian">
-              <span>Parent / guardian</span>
+            <label class="opcao">
+              <input type="radio" name="perfil" value="responsavel">
+              <span>Pai, mãe ou responsável</span>
             </label>
-            <label class="chip">
-              <input type="radio" name="role" value="alumni">
-              <span>Alumni</span>
+            <label class="opcao">
+              <input type="radio" name="perfil" value="ex-aluno">
+              <span>Ex-aluno</span>
             </label>
           </div>
         </fieldset>
       </fieldset>
 
       <fieldset>
-        <legend>Your message</legend>
+        <legend>Sua mensagem</legend>
 
-        <div class="field">
-          <label for="department">Department</label>
-          <select id="department" name="department" aria-describedby="department-error" required>
-            <option value="" disabled selected>Select a department</option>
-            <option value="admissions">Admissions and enrollment</option>
-            <option value="financial-aid">Tuition and financial aid (ProUni, FIES)</option>
-            <option value="registrar">Registrar's office</option>
-            <option value="careers">Internships and careers</option>
-            <option value="it-support">IT support</option>
-            <option value="other">Other</option>
+        <div class="campo">
+          <label for="departamento">Setor</label>
+          <select id="departamento" name="departamento" aria-describedby="departamento-erro" required>
+            <option value="" disabled selected>Selecione um setor</option>
+            <option value="admissoes">Admissões e matrículas</option>
+            <option value="financeiro">Mensalidades e auxílio financeiro (ProUni, FIES)</option>
+            <option value="secretaria">Secretaria acadêmica</option>
+            <option value="estagios-carreiras">Estágios e carreiras</option>
+            <option value="suporte-ti">Suporte de TI</option>
+            <option value="outro">Outro</option>
           </select>
-          <small class="error" id="department-error">Please choose a department.</small>
+          <small class="erro" id="departamento-erro">Por favor, escolha um setor.</small>
         </div>
 
-        <div class="field">
-          <label for="subject">Subject</label>
-          <input type="text" id="subject" name="subject" maxlength="100" aria-describedby="subject-error" required>
-          <small class="error" id="subject-error">Please add a subject.</small>
+        <div class="campo">
+          <label for="assunto">Assunto</label>
+          <input type="text" id="assunto" name="assunto" maxlength="100" aria-describedby="assunto-erro" required>
+          <small class="erro" id="assunto-erro">Por favor, informe um assunto.</small>
         </div>
 
-        <div class="field">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="5" minlength="20" maxlength="1000"
-            placeholder="Tell us how we can help…" aria-describedby="message-error counter" required></textarea>
-          <small class="error" id="message-error">Please write at least 20 characters.</small>
-          <small class="counter" id="counter" aria-live="polite">0 / 1000</small>
+        <div class="campo">
+          <label for="mensagem">Mensagem</label>
+          <textarea id="mensagem" name="mensagem" rows="5" minlength="20" maxlength="1000"
+            placeholder="Conte como podemos ajudar…" aria-describedby="mensagem-erro contador" required></textarea>
+          <small class="erro" id="mensagem-erro">Por favor, escreva pelo menos 20 caracteres.</small>
+          <small class="contador" id="contador" aria-live="polite">0 / 1000</small>
         </div>
       </fieldset>
 
-      <label class="consent">
-        <input type="checkbox" name="consent" required>
-        <span>I authorize Horizonte College to contact me regarding this request.</span>
+      <label class="consentimento">
+        <input type="checkbox" name="consentimento" required>
+        <span>Autorizo a Faculdade Horizonte a entrar em contato comigo sobre esta solicitação.</span>
       </label>
 
-      <button type="submit">Send message</button>
+      <button type="submit">Enviar mensagem</button>
     </form>
   </main>
 </body>

@@ -1,81 +1,81 @@
-const STORAGE_KEY = "contact-name";
+const CHAVE_ARMAZENAMENTO = "nome-contato";
 
-function formatPhone(value) {
-    const digits = value.replace(/\D/g, "").slice(0, 11);
-    const areaCode = digits.slice(0, 2);
-    const number = digits.slice(2);
+function formatarTelefone(valor) {
+    const digitos = valor.replace(/\D/g, "").slice(0, 11);
+    const ddd = digitos.slice(0, 2);
+    const numero = digitos.slice(2);
 
-    if (digits.length > 6) {
-        return `(${areaCode}) ${number.slice(0, -4)}-${number.slice(-4)}`;
+    if (digitos.length > 6) {
+        return `(${ddd}) ${numero.slice(0, -4)}-${numero.slice(-4)}`;
     }
 
-    if (digits.length > 2) {
-        return `(${areaCode}) ${number}`;
+    if (digitos.length > 2) {
+        return `(${ddd}) ${numero}`;
     }
 
-    return digits ? `(${digits}` : "";
+    return digitos ? `(${digitos}` : "";
 }
 
-function saveName(name) {
+function salvarNome(nome) {
     try {
-        sessionStorage.setItem(STORAGE_KEY, name);
+        sessionStorage.setItem(CHAVE_ARMAZENAMENTO, nome);
     } catch {
         return;
     }
 }
 
-function takeName() {
+function recuperarNome() {
     try {
-        const name = sessionStorage.getItem(STORAGE_KEY) ?? "";
-        sessionStorage.removeItem(STORAGE_KEY);
-        return name;
+        const nome = sessionStorage.getItem(CHAVE_ARMAZENAMENTO) ?? "";
+        sessionStorage.removeItem(CHAVE_ARMAZENAMENTO);
+        return nome;
     } catch {
         return "";
     }
 }
 
-function setupContactForm(form) {
-    const { message, phone } = form.elements;
-    const counter = document.getElementById("counter");
-    const submitButton = form.querySelector('button[type="submit"]');
+function configurarFormularioContato(formulario) {
+    const { mensagem, telefone } = formulario.elements;
+    const contador = document.getElementById("contador");
+    const botaoEnviar = formulario.querySelector('button[type="submit"]');
 
-    const updateCounter = () => {
-        counter.textContent = `${message.value.length} / ${message.maxLength}`;
+    const atualizarContador = () => {
+        contador.textContent = `${mensagem.value.length} / ${mensagem.maxLength}`;
     };
 
-    message.addEventListener("input", updateCounter);
-    updateCounter();
+    mensagem.addEventListener("input", atualizarContador);
+    atualizarContador();
 
-    phone.addEventListener("input", () => {
-        phone.value = formatPhone(phone.value);
+    telefone.addEventListener("input", () => {
+        telefone.value = formatarTelefone(telefone.value);
     });
 
-    form.addEventListener("submit", (event) => {
-        event.preventDefault();
+    formulario.addEventListener("submit", (evento) => {
+        evento.preventDefault();
 
-        submitButton.disabled = true;
-        submitButton.textContent = "Sending…";
+        botaoEnviar.disabled = true;
+        botaoEnviar.textContent = "Enviando…";
 
-        saveName(form.elements.first_name.value.trim());
-        window.location.href = form.action;
+        salvarNome(formulario.elements.primeiro_nome.value.trim());
+        window.location.href = formulario.action;
     });
 }
 
-function setupThankYouPage(nameSlot) {
-    const name = takeName();
+function configurarPaginaObrigado(espacoNome) {
+    const nome = recuperarNome();
 
-    if (name) {
-        nameSlot.textContent = `, ${name}`;
+    if (nome) {
+        espacoNome.textContent = `, ${nome}`;
     }
 }
 
-const contactForm = document.getElementById("contact-form");
-const successName = document.getElementById("success-name");
+const formularioContato = document.getElementById("formulario-contato");
+const nomeSucesso = document.getElementById("nome-sucesso");
 
-if (contactForm) {
-    setupContactForm(contactForm);
+if (formularioContato) {
+    configurarFormularioContato(formularioContato);
 }
 
-if (successName) {
-    setupThankYouPage(successName);
+if (nomeSucesso) {
+    configurarPaginaObrigado(nomeSucesso);
 }
