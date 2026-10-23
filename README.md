@@ -2,7 +2,7 @@
 
 Uma página de contato para uma faculdade fictícia, feita com **HTML, CSS e JavaScript puros** (sem frameworks). Começou como um trabalho de front-end que usei para praticar estrutura semântica, estilização responsiva e interatividade básica.
 
-🔗 **Demonstração online:** https://marllonlran.github.io/college-contact-form/
+🔗 **Demonstração online:** https://marllonlran.github.io/faculdade-horizonte/
 
 ## Funcionalidades
 
