@@ -1,40 +1,40 @@
 :root {
     color-scheme: light;
-    --fundo: #f5f3ef;
-    --cartao: #ffffff;
-    --campo: #ffffff;
-    --texto: #1f2430;
-    --suave: #6b7280;
-    --marcador: #9ca3af;
-    --borda: #d9d6cf;
-    --borda-hover: #b8b4aa;
-    --destaque: #1d4ed8;
-    --sobre-destaque: #ffffff;
-    --erro: #b42318;
-    --sucesso-fundo: #dcfce7;
-    --sucesso-texto: #15803d;
-    --sombra: 0 1px 3px rgb(0 0 0 / .06), 0 8px 24px rgb(0 0 0 / .06);
-    --raio: 10px;
-    --velocidade: .15s;
+    --background: #f5f3ef;
+    --card: #ffffff;
+    --field: #ffffff;
+    --text: #1f2430;
+    --muted: #6b7280;
+    --placeholder: #9ca3af;
+    --border: #d9d6cf;
+    --border-hover: #b8b4aa;
+    --accent: #1d4ed8;
+    --on-accent: #ffffff;
+    --error: #b42318;
+    --success-bg: #dcfce7;
+    --success-text: #15803d;
+    --shadow: 0 1px 3px rgb(0 0 0 / .06), 0 8px 24px rgb(0 0 0 / .06);
+    --radius: 10px;
+    --transition-speed: .15s;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
         color-scheme: dark;
-        --fundo: #12141a;
-        --cartao: #1b1e26;
-        --campo: #12141a;
-        --texto: #e8e9ed;
-        --suave: #9aa1ad;
-        --marcador: #6b7280;
-        --borda: #343844;
-        --borda-hover: #4b5060;
-        --destaque: #5b8cff;
-        --sobre-destaque: #0b1020;
-        --erro: #f97066;
-        --sucesso-fundo: #14532d;
-        --sucesso-texto: #86efac;
-        --sombra: 0 1px 3px rgb(0 0 0 / .4), 0 8px 24px rgb(0 0 0 / .3);
+        --background: #12141a;
+        --card: #1b1e26;
+        --field: #12141a;
+        --text: #e8e9ed;
+        --muted: #9aa1ad;
+        --placeholder: #6b7280;
+        --border: #343844;
+        --border-hover: #4b5060;
+        --accent: #5b8cff;
+        --on-accent: #0b1020;
+        --error: #f97066;
+        --success-bg: #14532d;
+        --success-text: #86efac;
+        --shadow: 0 1px 3px rgb(0 0 0 / .4), 0 8px 24px rgb(0 0 0 / .3);
     }
 }
 
@@ -47,8 +47,8 @@
 body {
     margin: 0;
     font-family: "Inter", system-ui, sans-serif;
-    background: var(--fundo);
-    color: var(--texto);
+    background: var(--background);
+    color: var(--text);
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
 }
@@ -66,41 +66,41 @@ h1 {
     margin: 0 0 12px;
 }
 
-.pagina {
+.page {
     max-width: 720px;
     margin: 0 auto;
     padding: 48px 16px;
 }
 
-.introducao {
+.intro {
     text-align: center;
     margin-bottom: 32px;
 }
 
-.introducao p {
+.intro p {
     max-width: 52ch;
     margin: 0 auto;
-    color: var(--suave);
+    color: var(--muted);
 }
 
-.introducao .rotulo-topo {
+.intro .eyebrow {
     display: inline-block;
     margin-bottom: 12px;
     padding: 2px 10px;
     border-radius: 999px;
-    background: var(--destaque);
-    color: var(--sobre-destaque);
+    background: var(--accent);
+    color: var(--on-accent);
     font-size: .8rem;
     font-weight: 600;
     letter-spacing: .06em;
     text-transform: uppercase;
 }
 
-.cartao {
-    background: var(--cartao);
+.card {
+    background: var(--card);
     border-radius: 16px;
     padding: 32px;
-    box-shadow: var(--sombra);
+    box-shadow: var(--shadow);
 }
 
 fieldset {
@@ -116,13 +116,13 @@ legend {
     margin-bottom: 16px;
 }
 
-.linha {
+.row {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 16px;
 }
 
-.campo {
+.field {
     display: flex;
     flex-direction: column;
     gap: 6px;
@@ -130,25 +130,25 @@ legend {
 }
 
 label,
-.rotulo {
+.label {
     font-weight: 500;
     font-size: .9rem;
 }
 
-legend.rotulo {
+legend.label {
     font-family: inherit;
     line-height: 1.5;
     margin-bottom: 8px;
 }
 
-.opcional,
-.contador {
-    color: var(--suave);
+.optional,
+.counter {
+    color: var(--muted);
     font-weight: 400;
     font-size: .85rem;
 }
 
-.contador {
+.counter {
     align-self: flex-end;
     font-variant-numeric: tabular-nums;
 }
@@ -160,10 +160,10 @@ textarea {
     font: inherit;
     color: inherit;
     padding: 10px 12px;
-    border: 1px solid var(--borda);
-    border-radius: var(--raio);
-    background: var(--campo);
-    transition: border-color var(--velocidade);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--field);
+    transition: border-color var(--transition-speed);
 }
 
 textarea {
@@ -174,78 +174,78 @@ textarea {
 input:hover,
 select:hover,
 textarea:hover {
-    border-color: var(--borda-hover);
+    border-color: var(--border-hover);
 }
 
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible {
-    outline: 2px solid var(--destaque);
+    outline: 2px solid var(--accent);
     outline-offset: 1px;
-    border-color: var(--destaque);
+    border-color: var(--accent);
 }
 
 ::placeholder {
-    color: var(--marcador);
+    color: var(--placeholder);
 }
 
-.erro {
+.error {
     display: none;
-    color: var(--erro);
+    color: var(--error);
     font-size: .85rem;
 }
 
 :is(input, select, textarea):user-invalid {
-    border-color: var(--erro);
+    border-color: var(--error);
 }
 
-:is(input, select, textarea):user-invalid ~ .erro {
+:is(input, select, textarea):user-invalid ~ .error {
     display: block;
 }
 
-.opcoes {
+.options {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
 }
 
-.opcao {
+.option {
     position: relative;
 }
 
-.opcao input {
+.option input {
     position: absolute;
     opacity: 0;
     width: 1px;
     height: 1px;
 }
 
-.opcao span {
+.option span {
     display: inline-block;
     padding: 8px 14px;
-    border: 1px solid var(--borda);
+    border: 1px solid var(--border);
     border-radius: 999px;
     font-weight: 400;
     cursor: pointer;
-    transition: background var(--velocidade), border-color var(--velocidade), color var(--velocidade);
+    transition: background var(--transition-speed), border-color var(--transition-speed), color var(--transition-speed);
 }
 
-.opcao span:hover {
-    border-color: var(--destaque);
+.option span:hover {
+    border-color: var(--accent);
 }
 
-.opcao input:checked + span {
-    background: var(--destaque);
-    border-color: var(--destaque);
-    color: var(--sobre-destaque);
+.option input:checked + span {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--on-accent);
 }
 
-.opcao input:focus-visible + span {
-    outline: 2px solid var(--destaque);
+.option input:focus-visible + span {
+    outline: 2px solid var(--accent);
     outline-offset: 2px;
 }
 
-.consentimento {
+.consent {
     display: flex;
     gap: 10px;
     align-items: flex-start;
@@ -254,42 +254,42 @@ textarea:focus-visible {
     cursor: pointer;
 }
 
-.consentimento input {
+.consent input {
     width: 18px;
     height: 18px;
     margin-top: 2px;
     flex-shrink: 0;
-    accent-color: var(--destaque);
+    accent-color: var(--accent);
 }
 
 button,
-.botao {
+.button {
     display: inline-block;
     text-decoration: none;
     font: inherit;
     font-weight: 600;
     padding: 12px 20px;
     border: 0;
-    border-radius: var(--raio);
-    background: var(--destaque);
-    color: var(--sobre-destaque);
+    border-radius: var(--radius);
+    background: var(--accent);
+    color: var(--on-accent);
     cursor: pointer;
-    transition: filter var(--velocidade), transform var(--velocidade);
+    transition: filter var(--transition-speed), transform var(--transition-speed);
 }
 
 button:hover,
-.botao:hover {
+.button:hover {
     filter: brightness(1.1);
 }
 
 button:active,
-.botao:active {
+.button:active {
     transform: translateY(1px);
 }
 
 button:focus-visible,
-.botao:focus-visible {
-    outline: 2px solid var(--destaque);
+.button:focus-visible {
+    outline: 2px solid var(--accent);
     outline-offset: 2px;
 }
 
@@ -300,48 +300,48 @@ button:disabled {
     transform: none;
 }
 
-.sucesso {
+.success {
     text-align: center;
 }
 
-.icone-sucesso {
+.success-icon {
     width: 56px;
     height: 56px;
     margin: 0 auto 12px;
     display: grid;
     place-items: center;
     border-radius: 50%;
-    background: var(--sucesso-fundo);
-    color: var(--sucesso-texto);
+    background: var(--success-bg);
+    color: var(--success-text);
     font-size: 1.5rem;
 }
 
-.sucesso h1 {
+.success h1 {
     font-size: 1.75rem;
     margin: 0 0 8px;
 }
 
-.sucesso p {
-    color: var(--suave);
+.success p {
+    color: var(--muted);
     margin: 0 0 24px;
 }
 
 @media (max-width: 560px) {
-    .pagina {
+    .page {
         padding-block: 32px;
     }
 
-    .cartao {
+    .card {
         padding: 24px 20px;
     }
 
-    .linha {
+    .row {
         grid-template-columns: 1fr;
         gap: 0;
     }
 
     button,
-    .botao {
+    .button {
         width: 100%;
     }
 }
