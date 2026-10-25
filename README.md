@@ -2,7 +2,7 @@
 
 A contact page for a fictional college, built with **plain HTML, CSS and JavaScript** (no frameworks). It started as a front-end exercise that I used to practice semantic structure, responsive styling and basic interactivity.
 
-🔗 **Live demo:** https://marllonlran.github.io/faculdade-horizonte/
+🔗 **Live demo:** https://marllonlran.github.io/college-contact-form/
 
 ## Features
 
