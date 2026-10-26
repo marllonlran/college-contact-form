@@ -1,4 +1,4 @@
-# Sistema operacional
+# Operating system
 Thumbs.db
 desktop.ini
 .DS_Store
@@ -7,5 +7,5 @@ desktop.ini
 .vscode/
 .idea/
 
-# Dependências (caso alguma ferramenta seja adicionada no futuro)
+# Dependencies (in case any tooling is added in the future)
 node_modules/
