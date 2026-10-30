@@ -1,40 +1,40 @@
 :root {
     color-scheme: light;
-    --bg: #f5f3ef;
-    --card-bg: #ffffff;
-    --field-bg: #ffffff;
-    --text: #1f2430;
-    --muted: #6b7280;
-    --placeholder: #9ca3af;
-    --border: #d9d6cf;
-    --border-hover: #b8b4aa;
-    --accent: #1d4ed8;
-    --on-accent: #ffffff;
-    --error: #b42318;
-    --success-bg: #dcfce7;
-    --success-text: #15803d;
-    --shadow: 0 1px 3px rgb(0 0 0 / .06), 0 8px 24px rgb(0 0 0 / .06);
-    --radius: 10px;
-    --speed: .15s;
+    --fundo: #f5f3ef;
+    --fundo-cartao: #ffffff;
+    --fundo-campo: #ffffff;
+    --texto: #1f2430;
+    --suave: #6b7280;
+    --marcador: #9ca3af;
+    --borda: #d9d6cf;
+    --borda-hover: #b8b4aa;
+    --destaque: #1d4ed8;
+    --sobre-destaque: #ffffff;
+    --erro: #b42318;
+    --fundo-sucesso: #dcfce7;
+    --texto-sucesso: #15803d;
+    --sombra: 0 1px 3px rgb(0 0 0 / .06), 0 8px 24px rgb(0 0 0 / .06);
+    --raio: 10px;
+    --velocidade: .15s;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
         color-scheme: dark;
-        --bg: #12141a;
-        --card-bg: #1b1e26;
-        --field-bg: #12141a;
-        --text: #e8e9ed;
-        --muted: #9aa1ad;
-        --placeholder: #6b7280;
-        --border: #343844;
-        --border-hover: #4b5060;
-        --accent: #5b8cff;
-        --on-accent: #0b1020;
-        --error: #f97066;
-        --success-bg: #14532d;
-        --success-text: #86efac;
-        --shadow: 0 1px 3px rgb(0 0 0 / .4), 0 8px 24px rgb(0 0 0 / .3);
+        --fundo: #12141a;
+        --fundo-cartao: #1b1e26;
+        --fundo-campo: #12141a;
+        --texto: #e8e9ed;
+        --suave: #9aa1ad;
+        --marcador: #6b7280;
+        --borda: #343844;
+        --borda-hover: #4b5060;
+        --destaque: #5b8cff;
+        --sobre-destaque: #0b1020;
+        --erro: #f97066;
+        --fundo-sucesso: #14532d;
+        --texto-sucesso: #86efac;
+        --sombra: 0 1px 3px rgb(0 0 0 / .4), 0 8px 24px rgb(0 0 0 / .3);
     }
 }
 
@@ -47,8 +47,8 @@
 body {
     margin: 0;
     font-family: "Inter", system-ui, sans-serif;
-    background: var(--bg);
-    color: var(--text);
+    background: var(--fundo);
+    color: var(--texto);
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
 }
@@ -66,41 +66,41 @@ h1 {
     margin: 0 0 12px;
 }
 
-.page {
+.pagina {
     max-width: 720px;
     margin: 0 auto;
     padding: 48px 16px;
 }
 
-.intro {
+.introducao {
     text-align: center;
     margin-bottom: 32px;
 }
 
-.intro p {
+.introducao p {
     max-width: 52ch;
     margin: 0 auto;
-    color: var(--muted);
+    color: var(--suave);
 }
 
-.intro .badge {
+.introducao .selo {
     display: inline-block;
     margin-bottom: 12px;
     padding: 2px 10px;
     border-radius: 999px;
-    background: var(--accent);
-    color: var(--on-accent);
+    background: var(--destaque);
+    color: var(--sobre-destaque);
     font-size: .8rem;
     font-weight: 600;
     letter-spacing: .06em;
     text-transform: uppercase;
 }
 
-.card {
-    background: var(--card-bg);
+.cartao {
+    background: var(--fundo-cartao);
     border-radius: 16px;
     padding: 32px;
-    box-shadow: var(--shadow);
+    box-shadow: var(--sombra);
 }
 
 fieldset {
@@ -116,13 +116,13 @@ legend {
     margin-bottom: 16px;
 }
 
-.row {
+.linha {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 16px;
 }
 
-.field {
+.campo {
     display: flex;
     flex-direction: column;
     gap: 6px;
@@ -130,25 +130,25 @@ legend {
 }
 
 label,
-.label {
+.rotulo {
     font-weight: 500;
     font-size: .9rem;
 }
 
-legend.label {
+legend.rotulo {
     font-family: inherit;
     line-height: 1.5;
     margin-bottom: 8px;
 }
 
-.optional,
-.counter {
-    color: var(--muted);
+.opcional,
+.contador {
+    color: var(--suave);
     font-weight: 400;
     font-size: .85rem;
 }
 
-.counter {
+.contador {
     align-self: flex-end;
     font-variant-numeric: tabular-nums;
 }
@@ -160,10 +160,10 @@ textarea {
     font: inherit;
     color: inherit;
     padding: 10px 12px;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    background: var(--field-bg);
-    transition: border-color var(--speed);
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+    background: var(--fundo-campo);
+    transition: border-color var(--velocidade);
 }
 
 textarea {
@@ -174,78 +174,78 @@ textarea {
 input:hover,
 select:hover,
 textarea:hover {
-    border-color: var(--border-hover);
+    border-color: var(--borda-hover);
 }
 
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible {
-    outline: 2px solid var(--accent);
+    outline: 2px solid var(--destaque);
     outline-offset: 1px;
-    border-color: var(--accent);
+    border-color: var(--destaque);
 }
 
 ::placeholder {
-    color: var(--placeholder);
+    color: var(--marcador);
 }
 
-.error {
+.erro {
     display: none;
-    color: var(--error);
+    color: var(--erro);
     font-size: .85rem;
 }
 
 :is(input, select, textarea):user-invalid {
-    border-color: var(--error);
+    border-color: var(--erro);
 }
 
-:is(input, select, textarea):user-invalid ~ .error {
+:is(input, select, textarea):user-invalid ~ .erro {
     display: block;
 }
 
-.options {
+.opcoes {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
 }
 
-.option {
+.opcao {
     position: relative;
 }
 
-.option input {
+.opcao input {
     position: absolute;
     opacity: 0;
     width: 1px;
     height: 1px;
 }
 
-.option span {
+.opcao span {
     display: inline-block;
     padding: 8px 14px;
-    border: 1px solid var(--border);
+    border: 1px solid var(--borda);
     border-radius: 999px;
     font-weight: 400;
     cursor: pointer;
-    transition: background var(--speed), border-color var(--speed), color var(--speed);
+    transition: background var(--velocidade), border-color var(--velocidade), color var(--velocidade);
 }
 
-.option span:hover {
-    border-color: var(--accent);
+.opcao span:hover {
+    border-color: var(--destaque);
 }
 
-.option input:checked + span {
-    background: var(--accent);
-    border-color: var(--accent);
-    color: var(--on-accent);
+.opcao input:checked + span {
+    background: var(--destaque);
+    border-color: var(--destaque);
+    color: var(--sobre-destaque);
 }
 
-.option input:focus-visible + span {
-    outline: 2px solid var(--accent);
+.opcao input:focus-visible + span {
+    outline: 2px solid var(--destaque);
     outline-offset: 2px;
 }
 
-.consent {
+.consentimento {
     display: flex;
     gap: 10px;
     align-items: flex-start;
@@ -254,42 +254,42 @@ textarea:focus-visible {
     cursor: pointer;
 }
 
-.consent input {
+.consentimento input {
     width: 18px;
     height: 18px;
     margin-top: 2px;
     flex-shrink: 0;
-    accent-color: var(--accent);
+    accent-color: var(--destaque);
 }
 
 button,
-.button {
+.botao {
     display: inline-block;
     text-decoration: none;
     font: inherit;
     font-weight: 600;
     padding: 12px 20px;
     border: 0;
-    border-radius: var(--radius);
-    background: var(--accent);
-    color: var(--on-accent);
+    border-radius: var(--raio);
+    background: var(--destaque);
+    color: var(--sobre-destaque);
     cursor: pointer;
-    transition: filter var(--speed), transform var(--speed);
+    transition: filter var(--velocidade), transform var(--velocidade);
 }
 
 button:hover,
-.button:hover {
+.botao:hover {
     filter: brightness(1.1);
 }
 
 button:active,
-.button:active {
+.botao:active {
     transform: translateY(1px);
 }
 
 button:focus-visible,
-.button:focus-visible {
-    outline: 2px solid var(--accent);
+.botao:focus-visible {
+    outline: 2px solid var(--destaque);
     outline-offset: 2px;
 }
 
@@ -300,48 +300,48 @@ button:disabled {
     transform: none;
 }
 
-.success {
+.sucesso {
     text-align: center;
 }
 
-.success-icon {
+.icone-sucesso {
     width: 56px;
     height: 56px;
     margin: 0 auto 12px;
     display: grid;
     place-items: center;
     border-radius: 50%;
-    background: var(--success-bg);
-    color: var(--success-text);
+    background: var(--fundo-sucesso);
+    color: var(--texto-sucesso);
     font-size: 1.5rem;
 }
 
-.success h1 {
+.sucesso h1 {
     font-size: 1.75rem;
     margin: 0 0 8px;
 }
 
-.success p {
-    color: var(--muted);
+.sucesso p {
+    color: var(--suave);
     margin: 0 0 24px;
 }
 
 @media (max-width: 560px) {
-    .page {
+    .pagina {
         padding-block: 32px;
     }
 
-    .card {
+    .cartao {
         padding: 24px 20px;
     }
 
-    .row {
+    .linha {
         grid-template-columns: 1fr;
         gap: 0;
     }
 
     button,
-    .button {
+    .botao {
         width: 100%;
     }
 }
